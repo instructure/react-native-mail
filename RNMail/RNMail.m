@@ -23,6 +23,11 @@
 
 RCT_EXPORT_MODULE()
 
+RCT_EXPORT_BLOCKING_SYNCHRONOUS_METHOD(canSendMail)
+{
+    return @([MFMailComposeViewController canSendMail])
+}
+
 RCT_EXPORT_METHOD(mail:(NSDictionary *)options
                   callback: (RCTResponseSenderBlock)callback)
 {
